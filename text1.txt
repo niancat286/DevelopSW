@@ -1,0 +1,171 @@
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1
+$ # Клонування порожнього віддаленого репозиторію                    [21:12:24]
+git clone git@github.com:niancat286/DevelopSW.git    
+cd DevelopSW
+Cloning into 'DevelopSW'...
+warning: You appear to have cloned an empty repository.
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main
+$ git status                                                         [21:13:46]
+
+On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main
+$ git commit --allow-empty -m "Initial commit"                       [21:14:06]
+
+[main (root-commit) 9c87812] Initial commit
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main
+$ echo "Якийсь текст" > ignored.txt                                  [21:14:29]
+
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ git status                                                         [21:14:35]
+
+On branch main
+Your branch is based on 'origin/main', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	ignored.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ echo "ignored.txt" > .gitignore                                    [21:14:40]
+
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ git status                                                         [21:14:46]
+
+On branch main
+Your branch is based on 'origin/main', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ git add .gitignore                                                 [21:14:50]
+
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ git commit -m "Added gitignore"                                    [21:14:56]
+
+[main 7dcbc80] Added gitignore
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main
+$ echo 'print("Hello, World")' > main.py                             [21:15:00]
+
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ git add main.py                                                    [21:15:43]
+
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ git status                                                         [21:15:50]
+
+On branch main
+Your branch is based on 'origin/main', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   main.py
+
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ git reset HEAD main.py                                             [21:15:57]
+
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ git add main.py                                                    [21:16:04]
+
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ echo 'def print_message():                                         [21:16:15]
+    for _ in range(10):
+        print("Hello, World")
+
+print_message()' > main.py
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ git add main.py                                                    [21:16:21]
+
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ git commit                                                         [21:16:30]
+
+[main 58fa809] `Printing message “hello world” 10 times`
+ 1 file changed, 5 insertions(+)
+ create mode 100644 main.py
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main
+$ git log                                                            [21:17:21]
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main
+$ echo 'def print_message():                                         [21:17:35]
+    for _ in range(10):
+        print("Hello, World")
+
+def vivaMechMat():
+    print("Viva Mech-mat faculty")
+
+print_message()
+vivaMechMat()' > main.py
+
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ git commit -am "Added vivaMechMat function"                        [21:17:43]
+
+[main 35c0865] Added vivaMechMat function
+ 1 file changed, 4 insertions(+)
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main
+$ git log -2                                                         [21:17:50]
+
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main
+$ echo 'def print_message():                                         [21:17:57]
+    for _ in range(10):
+        print("Hello, World")
+
+def vivaMechMat():
+    print("Viva Mech-mat faculty!!!")
+
+print_message()
+vivaMechMat()' > main.py
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ git commit --amend --no-edit                                       [21:18:04]
+
+[main 96d8c0e] Added vivaMechMat function
+ Date: Sun Feb 2 21:17:50 2025 +0200
+ 1 file changed, 4 insertions(+)
+ 
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ git log -2                                                         [21:18:11]
+
+yasya@Yaroslavas-MacBook-Pro: ~/RepositoryHW1/DevelopSW main!
+$ git push -u origin main                                            [21:19:20]
+
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 11 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (11/11), 1.05 KiB | 1.05 MiB/s, done.
+Total 11 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:niancat286/DevelopSW.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
